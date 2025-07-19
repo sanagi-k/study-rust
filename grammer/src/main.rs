@@ -1,3 +1,5 @@
+mod question_1;
+
 fn main() {
-    println!("Hello, world!");
+    question_1::proc();
 }
