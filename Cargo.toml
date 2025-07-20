@@ -4,7 +4,13 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+strum = "0.27.1"
+strum_macros = "0.27.1"
 
 [workspace]
 resolver = "2"
 members = [ "grammer", "hello-world" ]
+
+[workspace.dependencies]
+strum = "0.27.1"
+strum_macros = "0.27.1"

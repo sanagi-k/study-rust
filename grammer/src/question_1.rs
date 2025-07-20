@@ -1,6 +1,10 @@
 // Question-1)
 // enumを使って信号の状態を定義し、matchで表示を分岐してください。
 
+use strum::IntoEnumIterator;
+use strum_macros::EnumIter;
+
+#[derive(Debug, EnumIter)]
 enum TrafficLight {
     Red,
     Yellow,
@@ -17,10 +21,7 @@ fn show_light(light: TrafficLight) {
 }
 
 pub fn proc() {
-    let light = TrafficLight::Red;
-    show_light(light);
-    let light = TrafficLight::Yellow;
-    show_light(light);
-    let light = TrafficLight::Green;
-    show_light(light);
+    for light in TrafficLight::iter() {
+        show_light(light);
+    }
 }
