@@ -1,4 +1,4 @@
-// Question-1)
+// Question-1) Study : enum, match
 // enumを使って信号の状態を定義し、matchで表示を分岐してください。
 
 use strum::IntoEnumIterator;
@@ -21,6 +21,8 @@ fn show_light(light: TrafficLight) {
 }
 
 pub fn proc() {
+    println!("\n(Question-1) enum, match test");
+
     for light in TrafficLight::iter() {
         show_light(light);
     }

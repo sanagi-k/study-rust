@@ -1,4 +1,4 @@
-// Question-2)
+// Question-2) Study : Option型
 // 正の数ならSome(平方根)、負ならNoneを返す関数を作ってください
 
 fn safe_sqrt(n: f64) -> Option<f64> {
@@ -10,7 +10,7 @@ fn safe_sqrt(n: f64) -> Option<f64> {
 }
 
 pub fn proc() {
-    println!("\n(Question-2)");
+    println!("\n(Question-2) Option Type");
 
     for num in -9..=10{
         print!("num = {} : ", num as f64);
