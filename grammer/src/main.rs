@@ -3,6 +3,7 @@ mod question_2;
 mod question_3;
 mod question_4;
 mod question_5;
+mod question_6;
 
 fn main() {
     question_1::proc();
@@ -10,4 +11,5 @@ fn main() {
     question_3::proc();
     question_4::proc();
     question_5::proc();
+    question_6::proc();
 }
