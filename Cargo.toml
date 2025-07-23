@@ -4,15 +4,29 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+gstreamer = "0.24.0"
+gstreamer-app = "0.24.0"
+gstreamer-audio = "0.24.0"
+gstreamer-base = "0.24.0"
+gstreamer-editing-services = "0.24.0"
+gstreamer-pbutils = "0.24.0"
+gstreamer-video = "0.24.0"
 rand = "0.9.1"
 strum = "0.27.1"
 strum_macros = "0.27.1"
 
 [workspace]
 resolver = "2"
-members = [ "grammer", "hello-world" , "rpi"]
+members = [ "grammer", "hello-world" , "mac-cam-app", "rpi"]
 
 [workspace.dependencies]
 rand = "0.9.1"
 strum = "0.27.1"
 strum_macros = "0.27.1"
+gstreamer = "0.24.0"
+gstreamer-app = "0.24.0"
+gstreamer-audio = "0.24.0"
+gstreamer-base = "0.24.0"
+gstreamer-editing-services = "0.24.0"
+gstreamer-pbutils = "0.24.0"
+gstreamer-video = "0.24.0"
