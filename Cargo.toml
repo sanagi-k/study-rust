@@ -10,7 +10,7 @@ strum_macros = "0.27.1"
 
 [workspace]
 resolver = "2"
-members = [ "grammer", "hello-world" ]
+members = [ "grammer", "hello-world" , "rpi"]
 
 [workspace.dependencies]
 rand = "0.9.1"
