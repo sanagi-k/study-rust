@@ -4,7 +4,7 @@ use gst::prelude::*;
 use gstreamer as gst;
 use std::thread;
 
-#[cfg(target_os = "macos")]
+#[cfg(all(target_os = "macos", debug_assertions))]
 mod macos_gui {
     use objc2::MainThreadMarker;
     use objc2_app_kit::{NSApp, NSApplication};
@@ -51,7 +51,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
     });
 
-    #[cfg(target_os = "macos")]
+    #[cfg(all(target_os = "macos", debug_assertions))]
     macos_gui::run();
 
     // パイプラインを停止
