@@ -17,7 +17,7 @@ strum_macros = "0.27.1"
 
 [workspace]
 resolver = "2"
-members = [ "framework-test", "grammer", "hello-world" , "mac-cam-app", "rpi"]
+members = [ "framework-test", "grammer", "hello-world" , "mac-cam-app", "rpi", "system-monitor"]
 
 [workspace.dependencies]
 rand = "0.9.1"
