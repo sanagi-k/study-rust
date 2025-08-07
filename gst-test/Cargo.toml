@@ -1,0 +1,13 @@
+[package]
+name = "gst-test"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+gstreamer = { workspace = true }
+gstreamer-app = { workspace = true }
+gstreamer-audio = { workspace = true }
+gstreamer-base = { workspace = true }
+gstreamer-editing-services = { workspace = true }
+gstreamer-pbutils = { workspace = true }
+gstreamer-video = { workspace = true }

@@ -250,6 +250,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "gst-test"
+version = "0.1.0"
+dependencies = [
+ "gstreamer",
+ "gstreamer-app",
+ "gstreamer-audio",
+ "gstreamer-base",
+ "gstreamer-editing-services",
+ "gstreamer-pbutils",
+ "gstreamer-video",
+]
+
+[[package]]
 name = "gstreamer"
 version = "0.24.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
