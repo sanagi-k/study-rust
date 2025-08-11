@@ -3,6 +3,7 @@ mod thread2;
 mod thread3;
 mod thread_ctrl;
 
+use std::fs;
 use std::thread;
 use thread_ctrl::ThreadCtrl;
 use thread1::Thread1;
@@ -49,9 +50,27 @@ fn run_all(runners: Vec<(String, Box<dyn ThreadCtrl>)>) {
 }
 
 fn main() {
-    // 名前付きトレイトオブジェクトを構築
+    let file_path = "framework-test/config.yaml";
+
+    let contents = match fs::read_to_string(file_path) {
+        Ok(s) => s,
+        Err(e) => {
+            eprintln!("ファイル '{}' の読み込みに失敗しました: {}", file_path, e);
+            return;
+        }
+    };
+
+    // 読み込んだ文字列を`serde_yaml::from_str`でデシリアライズする
+    let config: thread1::Config = match serde_yaml::from_str(&contents) {
+        Ok(c) => c,
+        Err(e) => {
+            eprintln!("YAMLのパースに失敗しました: {}", e);
+            return;
+        }
+    };
+
     let runners: Vec<(String, Box<dyn ThreadCtrl>)> = vec![
-        ("スレッド1".to_string(), Box::new(Thread1)),
+        ("スレッド1".to_string(), Box::new(Thread1 { config })),
         ("スレッド2".to_string(), Box::new(Thread2)),
         ("スレッド3".to_string(), Box::new(Thread3)),
     ];

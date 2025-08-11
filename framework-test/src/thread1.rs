@@ -1,21 +1,27 @@
 use crate::thread_ctrl::ThreadCtrl;
 use rand::Rng;
+use serde::Deserialize;
 use std::error::Error;
 use std::thread;
 use std::time::Duration;
 
-pub struct Thread1;
+#[derive(Deserialize, Debug)]
+pub struct Config {
+    wait_time_ms: u64,
+}
+pub struct Thread1 {
+    pub config: Config,
+}
 
 impl ThreadCtrl for Thread1 {
     fn init(&self) -> Result<(), Box<dyn Error>> {
-        let wait_time_ms = 200;
         let i = rand::rng().random_range(0..=1);
         if i == 0 {
-            thread::sleep(Duration::from_millis(wait_time_ms));
+            thread::sleep(Duration::from_millis(self.config.wait_time_ms));
             println!("スレッド1: 初期化完了");
             Ok(())
         } else {
-            thread::sleep(Duration::from_millis(wait_time_ms * 10));
+            thread::sleep(Duration::from_millis(self.config.wait_time_ms * 10));
             Err("Error) Setup Failed".into())
         }
     }
